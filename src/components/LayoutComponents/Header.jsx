@@ -126,11 +126,11 @@ const Header = () => {
     navigate("/login"); 
   };
   return (
-    <div className="bg-[#050505] text-white pt-5">
+    <div className="bg-[#FFFFFF] text-white pt-5 sticky">
       <div className="flex justify-between">
         <div className="lg:hidden ">
           <div className="py-3 pl-4">
-            <div onClick={showDrawer} className="text-3xl ">
+            <div onClick={showDrawer} className="text-3xl text-black ">
               <FaBars />
             </div>
           </div>
@@ -140,7 +140,7 @@ const Header = () => {
           <div className="relative">
           
             <Link to={'/dashboard/Settings/notification'}>
-            <div className="w-[45px] h-[45px] flex items-center justify-center text-xl rounded-full bg-white text-black ">
+            <div className="w-[45px] h-[45px] flex items-center justify-center text-xl rounded-full bg-white  ">
               <span>
                 <LuBell />
               </span>
@@ -157,7 +157,7 @@ const Header = () => {
               open={open}
               key={placement}
             >
-              <div className="bg-black h-screen -m-6">
+              <div className="bg-[#FFFFFF] h-screen -m-6">
               <div className="custom-sidebar-logo flex justify-center ">
                 <img src={logo} alt="Logo" className="w-[160px]" />
               </div>
@@ -171,8 +171,8 @@ const Header = () => {
                       to={item.link}
                       className={`menu-item my-4 mx-5 py-3 px-3 flex items-center cursor-pointer ${
                         selectedKey === item.key
-                          ? "bg-[#EDC4C5] rounded-md"
-                          : "bg-white rounded-md hover:bg-gray-200"
+                          ? "bg-[#3A3C3B] rounded-md text-white hover:text-black"
+                          : "bg-white rounded-md hover:bg-gray-200 hover:text-black"
                       }`}
                       onClick={() => {
                         if (item.children) {
@@ -186,7 +186,7 @@ const Header = () => {
                         alt={item.label}
                         className="w-5 h-5 mr-3"
                       />
-                      <span className="block w-full text-black">
+                      <span className="block w-full">
                         {item.label}
                       </span>
 
@@ -202,7 +202,7 @@ const Header = () => {
 
                   
                     {item.children && expandedKeys.includes(item.key) && (
-                      <div className="overflow-hidden bg-white -my-2 mx-5 mb-4 text-black transition-all duration-300">
+                      <div className="overflow-hidden bg-white -my-2 mx-5 mb-4  transition-all duration-300">
                         {item.children.map((child) => (
                           <Link
                             key={child.key}
@@ -214,7 +214,7 @@ const Header = () => {
                             }`}
                             onClick={() => onClick(child.key)}
                           >
-                            <span className="block w-full text-black">
+                            <span className="block w-full ">
                               {child.label}
                             </span>
                           </Link>

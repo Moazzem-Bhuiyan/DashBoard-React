@@ -8,7 +8,7 @@
 const UserManagement = () => {
     
     return (
-        <div>
+        <div className="h-screen">
            userManagement
         </div>
     );
